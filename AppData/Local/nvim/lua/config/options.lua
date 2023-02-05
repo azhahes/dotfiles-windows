@@ -8,3 +8,7 @@ opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or 
 opt.iskeyword:append("-") -- consider string-string as whole word
 
 opt.shell = "pwsh"
+
+opt.foldlevel = 20
+opt.foldmethod = "expr"
+opt.foldexpr = "nvim_treesitter#foldexpr()"
