@@ -9,6 +9,10 @@ opt.iskeyword:append("-") -- consider string-string as whole word
 
 opt.shell = "pwsh"
 
-opt.foldlevel = 20
-opt.foldmethod = "expr"
-opt.foldexpr = "nvim_treesitter#foldexpr()"
+-- opt.foldlevel = 20
+-- opt.foldmethod = "expr"
+-- opt.foldexpr = "nvim_treesitter#foldexpr()"
+opt.foldcolumn = "1"
+opt.foldlevel = 99
+opt.foldlevelstart = -1
+opt.foldenable = true

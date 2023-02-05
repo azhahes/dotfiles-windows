@@ -3,8 +3,6 @@
 -- Add any additional keymaps here
 -- This file is automatically loaded by lazyvim.plugins.config
 
-local Util = require("lazyvim.util")
-
 local function map(mode, lhs, rhs, opts)
   local keys = require("lazy.core.handler").handlers.keys
   ---@cast keys LazyKeysHandler
@@ -36,3 +34,7 @@ map("n", "<leader>h", "^", { desc = "go to beggining of the line" })
 
 --use <space>l to go end of line
 map("n", "<leader>l", "$", { desc = "go  to end of the line" })
+
+-- Using ufo provider need remap `zR` and `zM`. If Neovim is 0.6.1, remap yourself
+map("n", "zR", require("ufo").openAllFolds, { desc = "open all folds (ufo)" })
+map("n", "zM", require("ufo").closeAllFolds, { desc = "close all folds (ufo)" })
