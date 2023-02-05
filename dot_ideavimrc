@@ -1,0 +1,113 @@
+"" Source your .vimrc
+source ~/.vimrc
+
+" Idea configurations 
+set clipboard+=ideaput
+
+nnoremap \e :e ~\.ideavimrc<CR>
+nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
+nnoremap <leader>ss :action SaveAll<CR>
+" Plugins
+set easymotion
+set NERDTree
+set surround
+set multiple-cursors
+set which-key
+
+set notimeout
+set timeoutlen=5000
+set selection=inclusive
+
+nnoremap <leader>w :wall<CR>
+
+" Quickly insert an empty new line without entering insert mode
+nnoremap ,o o<Esc>
+nnoremap ,O O<Esc>
+
+    
+"" Window options
+nnoremap <leader>qa :action CloseAllEditors<CR>
+nnoremap <leader>qq :action CloseContent<CR>
+nnoremap <leader>, :action HideActiveWindow<CR>
+nnoremap <leader>qr :action ReopenClosedTab<CR>
+nnoremap <leader>qba :action CloseAllEditorsButActive<CR>
+" nnoremap <leader>sm :action MaximizeEditorInSplit<CR>
+
+"" Source code editing option
+set ideajoin
+set idearefactormode=keep
+vnoremap < <jv
+vnoremap > >gv
+nnoremap [[ :action MethodUp<CR>
+nnoremap ]] :action MethodDown<CR>
+nnoremap zc :action CollapseRegion<CR>
+nnoremap zo :action ExpandRegion<CR>
+nnoremap <leader>zc :action CollapseAllRegions<CR>
+nnoremap <leader>zo :action ExpandAllRegions<CR>
+noremap gc :action CommentByLineComment<CR>
+noremap <leader>r :action RenameElement<CR>
+nnoremap <Leader>=  :action ReformatCode<CR>
+nnoremap <leader>o :action OptimizeImports<CR>
+nnoremap <leader>gl :action RecentLocations<CR>
+noremap <leader>gr :action Refactorings.QuickListPopupAction<CR>
+
+nnoremap <leader>ge :action GotoNextError<CR>
+nnoremap <leader>gE :action GotoPreviousError<CR>
+
+"" Searching and source code navigation
+set incsearch
+nnoremap <leader>ff :action GotoFile<CR>
+nnoremap <leader>fs :action GotoSymbol<CR>
+nnoremap <leader>fg :action FindInPath<CR>
+nnoremap <leader>fb :action Switcher<CR>
+nnoremap <leader>fu :action FindUsages<CR>
+nnoremap gs :action FileStructurePopup<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gt :action GotoTest<CR>
+nnoremap gb :action Back<CR>
+nnoremap gf :action Forward<CR>
+nnoremap gh :action QuickJavaDoc<cr>
+nnoremap ga :action ShowIntentionActions<CR>
+nnoremap ge :action ShowErrorDescription<CR>
+
+nnoremap <c-x> :action HideAllWindows<CR>
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
+
+"" Debugging options
+nnoremap ,r :action ContextRun<CR>
+nnoremap ,f :action ChooseRunConfiguration<CR>
+nnoremap ,t :action ActivateRunToolWindow<CR>
+nnoremap ,u :action Rerun<CR>
+nnoremap ,b :action ToggleLineBreakpoint<CR>
+nnoremap ,d :action ContextDebug<CR>
+nnoremap ,n :action ActivateDebugToolWindow<CR>
+
+" NERDTree config
+nnoremap <leader>el :NERDTreeFind<CR>
+nnoremap <leader>et :NERDTreeToggle<CR>
+" build
+nnoremap .b :action BuildCurrentProject<CR>
+" Git Actions
+nmap <leader>gim <action>(Git.Menu)
+
+" Turn on case-insensitive feature
+let g:EasyMotion_smartcase = 1
+
+" JK motions: Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+
+" easymotion
+map s <Plug>(easymotion-s)
+
+" Incremental select
+map <Leader>v :action EditorSelectWord<CR> 
+
+" Move statements
+vmap <C-j> :action MoveStatementDown<CR>
+vmap <C-k> :action MoveStatementUp<CR>
+vmap <C-h> :action MoveElementLeft<CR>
+vmap <C-l> :action MoveElementRight<CR>

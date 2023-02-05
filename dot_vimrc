@@ -1,0 +1,65 @@
+let mapleader = " "
+
+"call plug#begin()
+" Plug 'mtdl9/vim-log-highlighting'
+"call plug#end()
+
+nnoremap \v :e ~\.vimrc<CR>
+set number relativenumber
+set showmode
+set showcmd
+set smartcase
+set incsearch
+set ignorecase
+set cursorline
+set clipboard+=unnamed
+set termguicolors
+
+imap jk <ESC>   
+" --use <space>h to go beggining of line
+noremap <leader>h ^
+" --use <space>l to go end of line
+noremap <leader>l $
+" -- clear search highlights
+nnoremap <leader>nh :nohlsearch<CR>
+
+" -- increment/decrement numbers
+nnoremap <leader>+ <C-a>
+nnoremap <leader>- <C-x>
+
+" some Misc setup 
+noremap <leader>y "*y
+noremap <leader>yy "*yy
+noremap <leader>p "*p
+
+
+" -- window management
+nnoremap <leader>sv <C-w>v
+nnoremap <leader>sh <C-w>s
+nnoremap <leader>se <C-w>=
+nnoremap <leader>sx :close<CR>
+
+nnoremap <leader>to :tabnew<CR>
+nnoremap <leader>tx :tabclose<CR>
+nnoremap <leader>tn :tabn<CR>
+nnoremap <leader>tp :tabp<CR>
+
+vnoremap K :move '<-2<CR>gv=gv"
+vnoremap J :move '>+1<CR>gv=gv"
+
+if has('ide')
+" general ideavim config
+  if &ide =~? 'intellij idea'
+    if &ide =~? 'community'
+      " some mappings and options for IntelliJ IDEA Community Edition
+    elseif &ide =~? 'ultimate'
+      " some mappings and options for IntelliJ IDEA Ultimate Edition
+    endif
+  elseif &ide =~? 'pycharm'
+    " PyCharm specific mappings and options
+  endif
+else
+  " some mappings for Vim/Neovim
+  " -- delete single character without copying into register
+  nnoremap x _x
+endif
