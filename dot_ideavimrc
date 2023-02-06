@@ -89,7 +89,8 @@ nnoremap ,n :action ActivateDebugToolWindow<CR>
 nnoremap <leader>el :NERDTreeFind<CR>
 nnoremap <leader>et :NERDTreeToggle<CR>
 " build
-nnoremap .b :action BuildCurrentProject<CR>
+nnoremap <leader>bp :action BuildCurrentProject<CR>
+nnoremap <leader>bcp :action CleanCurrentProject<CR>
 " Git Actions
 nmap <leader>gim <action>(Git.Menu)
 
