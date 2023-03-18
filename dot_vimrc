@@ -15,7 +15,7 @@ set cursorline
 set clipboard+=unnamed
 set termguicolors
 
-imap jk <ESC>   
+" imap jk <ESC>   
 " --use <space>h to go beggining of line
 noremap <leader>h ^
 " --use <space>l to go end of line

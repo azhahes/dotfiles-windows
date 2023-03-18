@@ -78,6 +78,7 @@ set scrolloff=5
 
 "" Debugging options
 nnoremap ,r :action ContextRun<CR>
+nnoremap ,rut :action RiderUnitTestRunContextAction<CR>
 nnoremap ,f :action ChooseRunConfiguration<CR>
 nnoremap ,t :action ActivateRunToolWindow<CR>
 nnoremap ,u :action Rerun<CR>
@@ -90,6 +91,7 @@ nnoremap <leader>el :NERDTreeFind<CR>
 nnoremap <leader>et :NERDTreeToggle<CR>
 " build
 nnoremap <leader>bp :action BuildCurrentProject<CR>
+nnoremap <leader>bs :action BuildWholeSolutionAction<CR>
 nnoremap <leader>bcp :action CleanCurrentProject<CR>
 " Git Actions
 nmap <leader>gim <action>(Git.Menu)

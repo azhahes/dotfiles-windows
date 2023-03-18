@@ -28,13 +28,13 @@ Set-PSReadLineKeyHandler -Chord Ctrl+i -ScriptBlock {
 
 function Get-ChildItem-Hidden
 {
-  Get-ChildItem -Force
+  Get-ChildItem -Force | Sort-Object -Property LastWriteTime
 }
 # Alias
 Set-Alias -Name fcd -Value Invoke-FuzzySetLocation
 Set-Alias -Name rg -Value Invoke-PsFzfRipgrep
 Set-Alias -Name v -Value nvim
-Set-Alias -Name lsh -Value Get-ChildItem-Hidden
+Set-Alias -Name la -Value Get-ChildItem-Hidden
 
 $env:PATH += ";C:\Program Files (x86)\Cisco\Cisco AnyConnect Secure Mobility Client;C:\Program Files\AutoHotkey\v2"
 $env:SHELL = "pwsh"
@@ -79,7 +79,7 @@ function connect-vpn
 {
   $username, $password = get-cred
   autohotkey /script "$env:USERPROFILE\vpn-automation\lenovo-otp-automation.ahk" && autohotkey /script "$env:USERPROFILE\vpn-automation\copy-otp.ahk"
-  Start-Sleep -Seconds 4
+  Start-Sleep -Seconds 3
   $otp = Get-Clipboard
   Write-Output $username`n$password`n$otp | vpncli -s connect webvpnauto.lenovo.com
   Start-Sleep -Seconds 3
