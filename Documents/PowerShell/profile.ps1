@@ -78,8 +78,12 @@ function get-cred
 function connect-vpn
 {
   $username, $password = get-cred
-  autohotkey /script "$env:USERPROFILE\vpn-automation\lenovo-otp-automation.ahk" && autohotkey /script "$env:USERPROFILE\vpn-automation\copy-otp.ahk"
-  Start-Sleep -Seconds 3
+  autohotkey /script "$env:USERPROFILE\vpn-automation\lenovo-otp-automation.ahk"
+  Write-Host "copying"
+  Start-Sleep -seconds 2
+  autohotkey /script "$env:USERPROFILE\vpn-automation\copy-otp.ahk"
+  Start-Sleep -Milliseconds 3000
+  Write-Host "getting it from clipboard"
   $otp = Get-Clipboard
   Write-Output $username`n$password`n$otp | vpncli -s connect webvpnauto.lenovo.com
   Start-Sleep -Seconds 3
