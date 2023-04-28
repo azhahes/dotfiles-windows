@@ -67,7 +67,7 @@ nnoremap gt :action GotoTest<CR>
 nnoremap gb :action Back<CR>
 nnoremap gf :action Forward<CR>
 nnoremap gh :action QuickJavaDoc<cr>
-nnoremap ga :action ShowIntentionActions<CR>
+noremap ga :action ShowIntentionActions<CR>
 nnoremap ge :action ShowErrorDescription<CR>
 
 nnoremap <c-x> :action HideAllWindows<CR>

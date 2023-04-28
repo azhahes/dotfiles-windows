@@ -38,5 +38,5 @@ map("n", "<leader>l", "$", { desc = "go  to end of the line" })
 map("v", "<leader>l", "$", { desc = "go  to end of the line" })
 
 -- Using ufo provider need remap `zR` and `zM`. If Neovim is 0.6.1, remap yourself
-map("n", "zR", require("ufo").openAllFolds, { desc = "open all folds (ufo)" })
-map("n", "zM", require("ufo").closeAllFolds, { desc = "close all folds (ufo)" })
+-- map("n", "zR", require("ufo").openAllFolds, { desc = "open all folds (ufo)" })
+-- map("n", "zM", require("ufo").closeAllFolds, { desc = "close all folds (ufo)" })

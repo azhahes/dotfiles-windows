@@ -16,3 +16,6 @@ opt.foldcolumn = "1"
 opt.foldlevel = 99
 opt.foldlevelstart = -1
 opt.foldenable = true
+
+opt.shellcmdflag = '-nologo -noprofile -ExecutionPolicy RemoteSigned -command'
+opt.shellxquote = ''
