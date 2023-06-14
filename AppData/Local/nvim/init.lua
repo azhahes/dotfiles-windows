@@ -17,4 +17,5 @@ function dump(InputObject)
 end
 
 require("nvim-treesitter.install").compilers = { "clang" }
+
 print("Treesitter compilers:", dump(require("nvim-treesitter.install").compilers))
